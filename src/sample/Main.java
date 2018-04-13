@@ -31,9 +31,14 @@ public class Main extends Application {
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
 
+        scene.getStylesheets().add
+                (Main.class.getResource("/css/Login.css").toExternalForm());
+
       // Añadir Texto , etiquetas y cajas de texto
         Text scenetitle = new Text("Bienvenido");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        // añadimos ID
+        scenetitle.setId("welcome-text");
+
         grid.add(scenetitle, 0, 0, 2, 1);
 
         Label userName = new Label("Usuario:");
@@ -60,7 +65,8 @@ public class Main extends Application {
 
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
-
+        // añadimos ID
+        actiontarget.setId("actiontarget");
         // evento del botón
         btn.setOnAction(e -> {
             actiontarget.setFill(Color.FIREBRICK);
